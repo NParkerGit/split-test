@@ -4,41 +4,97 @@ Survey
     .applyTheme("default");
 
 var json = {
-    title: "American History",
+    title: "Employee Screening",
     pages: [{
         questions: [
             {
                 type: "radiogroup",
-                name: "civilwar",
-                title: "When was the Civil War?",
-                choices: [
-                    "1750-1800", "1800-1850", "1850-1900", "1900-1950", "after 1950"
-                ],
-                correctAnswer: "1850-1900"
+                    name: "whereHear",
+                    title: "Where did you hear about this opening?",
+                    choices: [
+                        "Employee", "Relative", "Job Fair", "Job Search Website", "Other"
+                    ]
             },
             {
                 type: "radiogroup",
-                name: "libertyordeath",
-                title: "Who said 'Give me liberty or give me death?'",
-                choicesOrder: "random",
+                name: "whyLeave",
+                title: "Why did you leave your last job?",
                 choices: [
-                    "John Hancock", "James Madison", "Patrick Henry", "Samuel Adams"
-                ],
-                correctAnswer: "Patrick Henry"
+                    "Laid Off", "Fired", "Done School","Not Applicable", "Tired of Job", "New Opportunity"
+                ]
             },
             {
                 type: "radiogroup",
-                name: "magnacarta",
-                title: "What is the Magna Carta?",
+                    name: "salary",
+                    title: "What do you expect to earn for yearly Salary?",
+                    choicesOrder: "random",
+                    choices: [
+                        "Less than $35,000", "$35,000 - $50,000", "$50,000 - $65,000", "$65,000+"
+                    ]
+            },
+            {
+                type: "radiogroup",
+                    name: "useProduct",
+                    title: "Do you use our products/services?",
+                    choices: [
+                        "Yes", "No", "Not Sure"
+                    ]
+            },
+            {
+                type: "radiogroup",
+                name: "future",
+                title: "Where do you see yourself in 5 years?'",
                 choicesOrder: "random",
                 choices: [
-                    "The foundation of the British parliamentary system", "The Great Seal of the monarchs of England", "The French Declaration of the Rights of Man", "The charter signed by the Pilgrims on the Mayflower"
-                ],
-                correctAnswer: "The foundation of the British parliamentary system"
+                    "In A Management Role Here", "Same Position as now", "Anywhere but Here", "I can't even think of what's for supper tonight"
+                ]
+            },
+            {
+                type: "radiogroup",
+                    name: "expectations",
+                    title: "What should we expect of you?",
+                    choices: [
+                        "Above and Beyond", "The Bare Minimum", "Being There is enough"
+                    ]
+            },
+            {
+                type: "radiogroup",
+                    name: "boss",
+                    title: "What is the most important quality for a Boss?'",
+                    choicesOrder: "random",
+                    choices: [
+                        "Time Management", "Understanding", "Reliable", "Trust-worthy"
+                    ]
+            },
+            {
+                type: "radiogroup",
+                name: "location",
+                title: "Where would you prefer working?",
+                choices: [
+                    "In Office", "Hybrid", "Remote"
+                ]
+            },
+            {
+                type: "radiogroup",
+                    name: "idealTime",
+                    title: "What is your ideal work time?",
+                    choicesOrder: "random",
+                    choices: [
+                        "9-5", "10-6", "2-10"
+                    ]
+            },
+            {
+                type: "radiogroup",
+            name: "startDate",
+            title: "When can you start?",
+            choices: [
+                "Immediately", "Next Year", "I'll let you know"
+            ]
             }
         ]
-    }],
-    completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
+    }]
+    // ,
+    // completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
 };
 
 window.survey = new Survey.Model(json);

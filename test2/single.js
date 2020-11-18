@@ -8,88 +8,120 @@ var json = {
     pages: [{
         questions: [
             {
-                type: "radiogroup",
-                    name: "whereHear",
-                    title: "Where did you hear about this opening?",
-                    choices: [
-                        "Employee", "Relative", "Job Fair", "Job Search Website", "Other"
-                    ]
+                type: "rating",
+                    name: "recommendScore",
+                    title: "How Likely Are You To Recommend The Candidate?",
+                    rateMin: 0,
+                    rateMax: 10,
+                    minRateDescription: "Least Likely",
+                    maxRateDescription: "Most Likely"
             },
             {
                 type: "radiogroup",
                 name: "whyLeave",
-                title: "Why did you leave your last job?",
+                title: "Why did they leave their last job?",
                 choices: [
-                    "Laid Off", "Fired", "Done School","Not Applicable", "Tired of Job", "New Opportunity"
+                    "Laid Off", "Fired", "Went To School", "Wanted New Opportunity"
                 ]
             },
             {
-                type: "radiogroup",
-                    name: "salary",
-                    title: "What do you expect to earn for yearly Salary?",
-                    choicesOrder: "random",
-                    choices: [
-                        "Less than $35,000", "$35,000 - $50,000", "$50,000 - $65,000", "$65,000+"
+                type: "matrix",
+                    name: "Skills",
+                    title: "Please indicate if you agree or disagree with the following statements",
+                    columns: [
+                        {
+                            value: 1,
+                            text: "Strongly Disagree"
+                        }, {
+                            value: 2,
+                            text: "Disagree"
+                        }, {
+                            value: 3,
+                            text: "Neutral"
+                        }, {
+                            value: 4,
+                            text: "Agree"
+                        }, {
+                            value: 5,
+                            text: "Strongly Agree"
+                        }
+                    ],
+                    rows: [
+                        {
+                            value: "dependable",
+                            text: "Candidate is Dependable"
+                        }, {
+                            value: "trustworthy",
+                            text: "Candidate is Trustworthy"
+                        }, {
+                            value: "reliable",
+                            text: "Candidate is Reliable"
+                        }, {
+                            value: "leader",
+                            text: "Candidate is a Leader"
+                        }
                     ]
             },
             {
-                type: "radiogroup",
-                    name: "useProduct",
-                    title: "Do you use our products/services?",
-                    choices: [
-                        "Yes", "No", "Not Sure"
-                    ]
+                type: "checkbox",
+            name: "candidateSkills",
+            title: "What qualities match this candidate?",
+            hasNone: true,
+            colCount: 4,
+            choices: [
+                "Communication",
+                "Teamwork",
+                "Friendly",
+                "Hardworker"
+            ]
             },
             {
-                type: "radiogroup",
-                name: "future",
-                title: "Where do you see yourself in 5 years?'",
-                choicesOrder: "random",
+                type: "dropdown",
+                name: "candidateEffort",
+                title: "What Effort did this candidate display?",
+                colCount: 0,
                 choices: [
-                    "In A Management Role Here", "Same Position as now", "Anywhere but Here", "I can't even think of what's for supper tonight"
+                    "Above and Beyond",
+                    "Average",
+                    "Bare Minimum",
+                    "Minimal"
                 ]
-            },
-            {
-                type: "radiogroup",
-                    name: "expectations",
-                    title: "What should we expect of you?",
-                    choices: [
-                        "Above and Beyond", "The Bare Minimum", "Being There is enough"
-                    ]
-            },
-            {
-                type: "radiogroup",
-                    name: "boss",
-                    title: "What is the most important quality for a Boss?'",
-                    choicesOrder: "random",
-                    choices: [
-                        "Time Management", "Understanding", "Reliable", "Trust-worthy"
-                    ]
             },
             {
                 type: "radiogroup",
                 name: "location",
-                title: "Where would you prefer working?",
+                title: "Did this candidate work: ",
                 choices: [
-                    "In Office", "Hybrid", "Remote"
+                    "Remotely", "Hybrid", "In Office"
                 ]
             },
             {
                 type: "radiogroup",
-                    name: "idealTime",
-                    title: "What is your ideal work time?",
-                    choicesOrder: "random",
-                    choices: [
-                        "9-5", "10-6", "2-10"
-                    ]
+                name: "boss",
+                title: "What is the most important quality the candidate looks for in a Boss?",
+                choicesOrder: "random",
+                choices: [
+                    "Time Management", "Understanding", "Reliable", "Trust-worthy"
+                ]
+            },
+            {
+                name: "position",
+                type: "text",
+                title: "What was the candidates prior position?"
             },
             {
                 type: "radiogroup",
-            name: "startDate",
-            title: "When can you start?",
-            choices: [
-                "Immediately", "Next Year", "I'll let you know"
-            ]
+                    name: "promotion",
+                    title: "Did the candidate get promoted, or worked towards promotion?",
+                    choices: [
+                        "Yes", "No", "Not Applicable"
+                    ]
+            },
+            {
+                name: "reason",
+                type: "text",
+                title: "Are there any reasons why we should not follow through with this candidate:",
+                placeHolder: "ex. Record, Misconduct"
             }
         ]
     }]
